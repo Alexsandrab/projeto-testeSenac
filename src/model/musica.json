@@ -1,0 +1,62 @@
+[
+    {
+        "musica": "segunda-feira",
+        "artista": "Esteban Tavares",
+        "ano": 2012,
+        "favorita?": true
+    },
+    {
+        "musica": "for you babies",
+        "artista": "Simply Red",
+        "ano": 2005,
+        "favorita?": true
+    },
+    {
+        "musica": "waiting for a girl like you",
+        "artista": "The foreigner",
+        "ano": 2008,
+        "favorita?": true
+    },
+    {
+        "musica": "Ai, Amor",
+        "artista": "AnaVitoria",
+        "ano": 2018,
+        "favorita?": false
+    },
+    {
+        "musica": "Please don't",
+        "artista": "K. Will",
+        "ano": 2011,
+        "favorita?": true
+    },
+    {
+        "musica": "por botafogo",
+        "artista": "Cicero",
+        "ano": 2013,
+        "favorita?": false
+    },
+    {
+        "musica": " Have You Ever Seen The Rain",
+        "artista": "Creedence Clearwater Revival",
+        "ano": 1970,
+        "favorita?": false
+    },
+    {
+        "musica": "pode se achegar",
+        "artista": ["Tiago Iorc", "Agnes Nunes"],
+        "ano": 2019,
+        "favorita?": false
+    },
+    {
+        "musica": "Telegrama",
+        "artista": "Zeca Baleiro",
+        "ano": 2002,
+        "favorita?": false
+    },
+    {
+        "musica": "atras/alem",
+        "artista": "O terno",
+        "ano": 2019,
+        "favorita?": true
+    }
+]
