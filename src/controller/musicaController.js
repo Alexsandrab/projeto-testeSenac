@@ -1,9 +1,10 @@
-const musica = require("../model/musica.json");
+const musica = require("../models/musica.json");
 
-const getAll = (req, res) =>{
+const getAllMusica = (req, res) =>{
     console.log(req.url);
-
-    res.send(musica);
+    res.status(200).send(musica);
 };
 
-module.exports = {getAll};
+module.exports = {
+    getAllMusica,
+}

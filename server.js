@@ -1,6 +1,6 @@
-const http = require('./src/app');
+const app = require('./src/app');
 const port = 3000;
 
 app.listen(port, () =>{
-    console.log("App rodando ana porta " + port);
+    console.log("App rodando na porta " + port);
 });
