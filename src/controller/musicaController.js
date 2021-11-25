@@ -20,18 +20,35 @@ const createMusica = (req, res) => {
         }
     })
 }
+    const getMusica = (req, res) => {
+        const musicaId = req.params.id
+        const musicaFound = musica.find((musica) => musica.id == musicaId)
 
+        if (musicaFound){
+            res.status(200).send(musicaFound)
+        }else{
+            res.status(404).send({message:"Empresa não encontrada"})
+        }
     
+    }
 
+    const getTitulo = (req, res) => {
+        const nomeTitulo = req.params.titulo
+        const tituloFound = musica.find((musica) => musica.titulo == nomeTitulo)
 
-
-
+        if (tituloFound){
+            res.status(200).send(tituloFound)
+        }else{
+            res.status(404).send({message:"Titulo não encontrado"})
+        }
     
-    
-    
+    }
+
 
 
 module.exports = {
+    getTitulo,
+    getMusica,
     createMusica,
     getAllMusica,
 }
