@@ -44,10 +44,39 @@ const createMusica = (req, res) => {
     
     }
 
+    const updateMusica = (req, res) => {
+        try {
+            const musicaId = req.params.id
+            const musicaToUpdate = req.body //Pego o corpo da requisição com as alterações 
+    
+            const musicaFound = musica.find(musica => musica.id == musicaId) // separo o filme que irei atualizar      
+            const musicaIndex = musica.indexOf(musicaFound) // separo o indice do filme no array de filmes
+    
+            if (musicaIndex >= 0) { // verifico se o filme existe no array de filmes
+                musica.splice(musicaIndex, 1, musicaToUpdate) //busco no array o filme, excluo o registro antigo e substituo pelo novo 
+            } else {
+                res.status(404).send({ message: "Música não encontrado para ser atualizado" })
+            }
+    
+            fs.writeFile("./src/models/musica.json", JSON.stringify(musica), 'utf8', function (err) { // gravo meu json de filmes atualizado
+                if (err) {
+                    res.status(500).send({ message: err }) // caso dê erro retorno status 500
+                } else {
+                    console.log("Arquivo de música atualizado com sucesso!")
+                    const musicaUpdated = musica.find(musica => musica.id == musicaId) // separo o filme que modifiquei no array
+                    res.status(200).send(musicaUpdated) // envio o filme modificado como resposta
+                }
+            })
+        } catch (err) {
+            res.status(500).send({ message: err }) // caso dê erro retorno status 500
+        }
+    }
+    
 
 
 module.exports = {
     getTitulo,
+    updateMusica,
     getMusica,
     createMusica,
     getAllMusica,
